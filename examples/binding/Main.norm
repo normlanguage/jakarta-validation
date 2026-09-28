@@ -1,4 +1,4 @@
-package jakarta.validation
+package binding
 
 import jakarta.validation.constraints.NotBlank
 import jakarta.validation.constraints.Size
@@ -11,5 +11,6 @@ class Registration {
 
 Void main() {
   var registration = Registration(username: "Norm")
+  require(condition: registration.username == "Norm", message: "Registration value changed")
   printLine(registration.username)
 }
