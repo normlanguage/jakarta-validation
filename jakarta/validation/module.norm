@@ -1,7 +1,9 @@
 Module module() {
   return module(
     name: "jakarta.validation",
-    version: 4,
+    version: 5,
+    exports: ["Valid", "constraints.NotBlank", "constraints.NotEmpty", "constraints.NotNull", "constraints.Email", "constraints.Size", "constraints.Min", "constraints.Max", "constraints.Positive", "constraints.PositiveOrZero", "constraints.Pattern", "constraints.Past", "constraints.Future"],
+    dependencies: [dependency(repository: "norm", name: "java.base", version: 1)],
     binding: jarBinding(
       target: mavenJar(
         group: "jakarta.validation",
@@ -10,19 +12,19 @@ Module module() {
         resolution: sha256("63ce00156388c365f3ac1be71fcfaf114682fc0c452020b5df6e7ec236e142ab")
       ),
       api: [
-        jarType(name: "Valid", members: []),
-        jarType(name: "constraints.NotBlank", members: ["message"]),
-        jarType(name: "constraints.NotEmpty", members: ["message"]),
-        jarType(name: "constraints.NotNull", members: ["message"]),
-        jarType(name: "constraints.Email", members: ["message", "regexp"]),
-        jarType(name: "constraints.Size", members: ["max", "message", "min"]),
-        jarType(name: "constraints.Min", members: ["message", "value"]),
-        jarType(name: "constraints.Max", members: ["message", "value"]),
-        jarType(name: "constraints.Positive", members: ["message"]),
-        jarType(name: "constraints.PositiveOrZero", members: ["message"]),
-        jarType(name: "constraints.Pattern", members: ["message", "regexp"]),
-        jarType(name: "constraints.Past", members: ["message"]),
-        jarType(name: "constraints.Future", members: ["message"])
+        jarType(name: "jakarta.validation.Valid", alias: "Valid", members: []),
+        jarType(name: "jakarta.validation.constraints.NotBlank", alias: "constraints.NotBlank", members: ["message"]),
+        jarType(name: "jakarta.validation.constraints.NotEmpty", alias: "constraints.NotEmpty", members: ["message"]),
+        jarType(name: "jakarta.validation.constraints.NotNull", alias: "constraints.NotNull", members: ["message"]),
+        jarType(name: "jakarta.validation.constraints.Email", alias: "constraints.Email", members: ["message", "regexp"]),
+        jarType(name: "jakarta.validation.constraints.Size", alias: "constraints.Size", members: ["max", "message", "min"]),
+        jarType(name: "jakarta.validation.constraints.Min", alias: "constraints.Min", members: ["message", "value"]),
+        jarType(name: "jakarta.validation.constraints.Max", alias: "constraints.Max", members: ["message", "value"]),
+        jarType(name: "jakarta.validation.constraints.Positive", alias: "constraints.Positive", members: ["message"]),
+        jarType(name: "jakarta.validation.constraints.PositiveOrZero", alias: "constraints.PositiveOrZero", members: ["message"]),
+        jarType(name: "jakarta.validation.constraints.Pattern", alias: "constraints.Pattern", members: ["message", "regexp"]),
+        jarType(name: "jakarta.validation.constraints.Past", alias: "constraints.Past", members: ["message"]),
+        jarType(name: "jakarta.validation.constraints.Future", alias: "constraints.Future", members: ["message"])
       ]
     )
   )
