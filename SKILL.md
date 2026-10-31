@@ -1,6 +1,6 @@
 # jakarta.validation Skill
 
-Use this skill to work with Norm module `jakarta.validation` version 5. Use only declarations listed below.
+Use this skill to work with Norm module `jakarta.validation` version 6. Use only declarations listed below.
 
 ## `jakarta.validation`
 

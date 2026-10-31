@@ -1,7 +1,7 @@
 Module module() {
   return module(
     name: "jakarta.validation",
-    version: 5,
+    version: 6,
     exports: ["Valid", "constraints.NotBlank", "constraints.NotEmpty", "constraints.NotNull", "constraints.Email", "constraints.Size", "constraints.Min", "constraints.Max", "constraints.Positive", "constraints.PositiveOrZero", "constraints.Pattern", "constraints.Past", "constraints.Future"],
     dependencies: [dependency(repository: "norm", name: "java.base", version: 1)],
     binding: jarBinding(
